@@ -9,8 +9,6 @@ const axiosInstance = axios.create({
   headers,
 });
 
-console.log('envs.BACKEND_URL', envs.BACKEND_URL);
-
 axiosInstance.interceptors.request.use(
   async (config) => {
     const token = await AsyncStorage.getItem('token');

@@ -19,11 +19,15 @@
     "axios": "^0.21.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-country-picker-modal": "^2.0.0",
     "react-native-dotenv": "^2.4.3",
     "react-native-gesture-handler": "^1.9.0",
+    "react-native-image-crop-picker": "^0.35.2",
+    "react-native-raw-bottom-sheet": "^2.2.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
-    "react-native-screens": "^2.16.1"
+    "react-native-screens": "^2.16.1",
+    "react-native-vector-icons": "^7.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

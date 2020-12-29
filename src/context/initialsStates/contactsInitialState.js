@@ -1,10 +1,10 @@
 export default {
   getContacts: {
-    data: {},
+    data: [],
     error: null,
     loading: false,
   },
-  createContacts: {
+  createContact: {
     data: {},
     error: null,
     loading: false,

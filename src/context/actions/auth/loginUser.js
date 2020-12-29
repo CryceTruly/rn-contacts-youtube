@@ -4,7 +4,7 @@ import {
   LOGIN_LOADING,
   LOGIN_SUCCESS,
 } from '../../../constants/actionTypes';
-import axiosInstance from '../../../helpers/axiosInterceptor';
+import axiosInstance from '../../../helpers/axiosInstance';
 
 export default ({password, userName: username}) => (dispatch) => {
   dispatch({
@@ -16,7 +16,6 @@ export default ({password, userName: username}) => (dispatch) => {
       username,
     })
     .then((res) => {
-      console.log('res.data :>> ', res.data);
       AsyncStorage.setItem('token', res.data.token);
       AsyncStorage.setItem('user', JSON.stringify(res.data.user));
       dispatch({

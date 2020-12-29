@@ -17,7 +17,6 @@ const AppNavContainer = () => {
   const getUser = async () => {
     try {
       const user = await AsyncStorage.getItem('user');
-
       if (user) {
         setAuthLoaded(true);
 

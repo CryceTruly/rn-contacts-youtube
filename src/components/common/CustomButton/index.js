@@ -13,6 +13,7 @@ const CustomButton = ({
   disabled,
   loading,
   onPress,
+  style,
 }) => {
   const getBgColor = () => {
     if (disabled) {
@@ -33,7 +34,7 @@ const CustomButton = ({
     <TouchableOpacity
       disabled={disabled}
       onPress={onPress}
-      style={[styles.wrapper, {backgroundColor: getBgColor()}]}>
+      style={[styles.wrapper, {backgroundColor: getBgColor()}, style]}>
       <View style={[styles.loaderSection]}>
         {loading && (
           <ActivityIndicator

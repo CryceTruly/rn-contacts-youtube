@@ -14,6 +14,7 @@ export default (form) => (dispatch) => (onSuccess) => {
     contact_picture: form.contactPicture || null,
     is_favorite: form.isFavorite || false,
   };
+
   dispatch({
     type: CREATE_CONTACT_LOADING,
   });

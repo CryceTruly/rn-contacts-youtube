@@ -22,14 +22,13 @@ const CreateContactComponent = ({
   localFile,
   onFileSelected,
 }) => {
-  console.log('localFile', localFile);
   return (
     <View style={styles.container}>
       <Container>
         <Image
           width={150}
           height={150}
-          source={{uri: localFile?.path || DEFAULT_IMAGE_URI}}
+          source={{uri: localFile?.path || localFile || DEFAULT_IMAGE_URI}}
           style={styles.imageView}
         />
         <TouchableOpacity onPress={openSheet}>
@@ -40,6 +39,7 @@ const CreateContactComponent = ({
             onChangeText({name: 'firstName', value: value});
           }}
           label="First name"
+          value={form.firstName || ''}
           placeholder="Enter First name"
           error={error?.first_name?.[0]}
         />
@@ -48,6 +48,7 @@ const CreateContactComponent = ({
           onChangeText={(value) => {
             onChangeText({name: 'lastName', value: value});
           }}
+          value={form.lastName || ''}
           label="Last name"
           placeholder="Enter Last name"
         />
@@ -70,6 +71,7 @@ const CreateContactComponent = ({
           }
           style={{paddingLeft: 10}}
           iconPosition="left"
+          value={form.phoneNumber || ''}
           error={error?.phone_number?.[0]}
           onChangeText={(value) => {
             onChangeText({name: 'phoneNumber', value: value});

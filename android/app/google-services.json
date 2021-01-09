@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "449695458244",
+    "project_id": "rncontacts-33f0c",
+    "storage_bucket": "rncontacts-33f0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449695458244:android:766c7b3cafbfb63f3bfa91",
+        "android_client_info": {
+          "package_name": "com.crycetruly.rncontacts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449695458244-gd0p2eol7oic9le2uknfgbs2u701o3fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMpkeDxjwCk5VYDkdRXZ8YTg0ucKgWNdw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449695458244-gd0p2eol7oic9le2uknfgbs2u701o3fs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "449695458244-5857lgj26e0sapu6om8rhjj2b62js5u3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.crycetruly.rncontacts"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

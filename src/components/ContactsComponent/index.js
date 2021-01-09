@@ -9,13 +9,12 @@ import {
   Image,
 } from 'react-native';
 import colors from '../../assets/theme/colors';
-import {CREATE_CONTACT} from '../../constants/routeNames';
-import AppModal from '../common/AppModal';
+import {CONTACT_DETAIL, CREATE_CONTACT} from '../../constants/routeNames';
 import Icon from '../common/Icon';
 import Message from '../common/Message';
 import styles from './styles';
 
-const ContactsComponent = ({modalVisible, data, loading, setModalVisible}) => {
+const ContactsComponent = ({sortBy, data, loading, setModalVisible}) => {
   const {navigate} = useNavigation();
   const ListEmptyComponent = () => {
     return (
@@ -35,7 +34,11 @@ const ContactsComponent = ({modalVisible, data, loading, setModalVisible}) => {
     } = item;
 
     return (
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity
+        style={styles.itemContainer}
+        onPress={() => {
+          navigate(CONTACT_DETAIL, {item});
+        }}>
         <View style={styles.item}>
           {contact_picture ? (
             <Image
@@ -81,18 +84,6 @@ const ContactsComponent = ({modalVisible, data, loading, setModalVisible}) => {
   return (
     <>
       <View style={{backgroundColor: colors.white, flex: 1}}>
-        <AppModal
-          modalFooter={<></>}
-          modalBody={
-            <View>
-              <Text>Hello</Text>
-            </View>
-          }
-          title="My Profile!"
-          setModalVisible={setModalVisible}
-          modalVisible={modalVisible}
-        />
-
         {loading && (
           <View style={{paddingVertical: 100, paddingHorizontal: 100}}>
             <ActivityIndicator color={colors.primary} size="large" />
@@ -103,7 +94,26 @@ const ContactsComponent = ({modalVisible, data, loading, setModalVisible}) => {
           <View style={[{paddingVertical: 20}]}>
             <FlatList
               renderItem={renderItem}
-              data={data}
+              data={
+                sortBy
+                  ? data.sort((a, b) => {
+                      if (sortBy === 'First Name') {
+                        if (b.first_name > a.first_name) {
+                          return -1;
+                        } else {
+                          return 1;
+                        }
+                      }
+                      if (sortBy === 'Last Name') {
+                        if (b.last_name > a.last_name) {
+                          return -1;
+                        } else {
+                          return 1;
+                        }
+                      }
+                    })
+                  : data
+              }
               ItemSeparatorComponent={() => (
                 <View
                   style={{height: 0.5, backgroundColor: colors.grey}}></View>

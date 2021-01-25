@@ -1,12 +1,13 @@
-import {StyleSheet} from 'react-native';
+import {ScaledSheet} from 'react-native-size-matters';
 import colors from '../../assets/theme/colors';
 
-export default StyleSheet.create({
+export default ScaledSheet.create({
   itemContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingRight: 20,
     alignItems: 'center',
+    flexGrow: 1,
   },
   item: {
     flexDirection: 'row',
@@ -32,5 +33,24 @@ export default StyleSheet.create({
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  actionButton: {
+    flexGrow: 1,
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.primary,
+    paddingHorizontal: 10,
+  },
+
+  actionText: {
+    textAlign: 'center',
+    maxWidth: '70@s',
+    paddingTop: '5@s',
+    fontSize: '14@s',
+    color: colors.white,
+  },
+  actionTextStyle: {
+    padding: '40@s',
   },
 });

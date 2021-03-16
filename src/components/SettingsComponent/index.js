@@ -20,7 +20,7 @@ const SettingsComponent = ({
         modalBody={
           <View>
             {prefArr.map(({name, selected, onPress}) => (
-              <View>
+              <View key={name}>
                 <TouchableOpacity
                   onPress={onPress}
                   style={{
